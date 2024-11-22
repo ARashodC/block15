@@ -1,22 +1,33 @@
+function froyo(){
 //get list via prompt
 //turn list to array
 
-const flavorsList = prompt(`What are you flavors`, `vanilla, passionfruit, mango, pineapple, vanilla, apple, mango, mango`)
+const flavorsList = prompt(`What are you flavors`, `vanilla,passionfruit,mango,pineapple,vanilla,apple,mango,mango`);
 
-const arrayFlavor = flavorsList.split(`,`)
-console.log(arrayFlavor)
+//turn string into array
 
-const flavorObject = [];
+const arrayFlavor = flavorsList.split(`,`);
+console.log(arrayFlavor);
+
+//make object keys(array num) in a loop for every flavor
+const flavorObject = {};
+//getting the length for the array
 for (let i = 0; i < arrayFlavor.length; i++) {
-    const currentKeys = Object.keys(flavorObject)
-    const currentFlavor = arrayFlavor[i]
-    console.log(flavorObject, currentKeys)
+  //finding the V for key for arrayFlavor
+  const flavorNum = Object.keys(flavorObject)
+  //getting the flavor in arrayFlavor
+  const flavor = arrayFlavor[i]
+  console.log(flavor) 
+  console.log(flavorNum,flavor,flavorObject)
 
-    if(currentKeys.includes(currentFlavor)){
-      
-    }else{
-      flavorObject.currentFlavor =+1
-    }
+  //loop for counting the frequency of the flavor
+  if (!flavorNum.includes(flavor)){
+    flavorObject[flavor] = 1
+  }else{
+    flavorObject[flavor] = flavorObject[flavor] + 1
+  }
+  
+   
 }
-console.log(flavorObject)
-
+}
+console.log(froyo())
